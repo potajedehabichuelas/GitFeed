@@ -103,7 +103,13 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="GitHub Feed" id="Bw0-2w-MTZ"/>
+                    <navigationItem key="navigationItem" title="GitHub Feed" id="Bw0-2w-MTZ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="Bhk-aE-zXE">
+                            <connections>
+                                <action selector="refreshFeed:" destination="FaQ-CD-zRl" id="dK6-Ep-xv6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="K48-XV-GWf" kind="show" identifier="userProfileSegue" id="DSR-X7-dE7"/>
                     </connections>

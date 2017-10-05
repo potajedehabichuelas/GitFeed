@@ -19,6 +19,8 @@ class GHEventsFeedTableViewController: UITableViewController, EventCellDelegate,
     
     var selectedUser: GHUser?
     
+    var currentEvents = Variable<[GHEvent]>([])
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,37 +31,9 @@ class GHEventsFeedTableViewController: UITableViewController, EventCellDelegate,
         self.tableView.tableFooterView = UIView()
         
         NVActivityIndicatorView.DEFAULT_TYPE = .pacman
-        self.startAnimating()
         
-        //Get the events
-        GFNetworkManager.sharedInstance.getGithubEventFeed(completion: { eventFeed in
-            guard let evFeed = eventFeed else { return }
-            
-            let currentEvents = Observable.just(evFeed)
-            
-            currentEvents
-                .bind(to: self.tableView.rx.items(cellIdentifier: R.reuseIdentifier.eventMainCellId.identifier, cellType: EventMainTableViewCell.self)) { (row, event, cell) in
-                    cell.delegate = self
-                    cell.user = event.actor
-                    
-                    cell.repoName.text = event.repo.name
-                    cell.ownerButton.setTitle("@"+event.actor.login, for: .normal)
-                    
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "dd-MM-yyyy"
-                    cell.repoCreation.text = dateFormatter.string(from: event.createdAt)
-                }
-                .disposed(by: self.disposeBag)
-            
-            self.tableView.rx
-                .modelSelected(GHEvent.self)
-                .subscribe(onNext:  { value in
-                    self.selectedUser = value.actor
-                })
-                .disposed(by: self.disposeBag)
-            
-            self.stopAnimating()
-        })
+        self.setUpTableView()
+        self.loadEventFeed()
     }
     
     override func viewDidLayoutSubviews() {
@@ -75,6 +49,45 @@ class GHEventsFeedTableViewController: UITableViewController, EventCellDelegate,
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func loadEventFeed() {
+        
+        self.startAnimating()
+        //Get the events
+        GFNetworkManager.sharedInstance.getGithubEventFeed(completion: { eventFeed in
+            guard let evFeed = eventFeed else { return }
+            self.currentEvents.value = evFeed
+            self.stopAnimating()
+        })
+    }
+    
+    func setUpTableView() {
+        self.currentEvents.asObservable()
+            .bind(to: self.tableView.rx.items(cellIdentifier: R.reuseIdentifier.eventMainCellId.identifier, cellType: EventMainTableViewCell.self)) { (row, event, cell) in
+                cell.delegate = self
+                cell.user = event.actor
+                
+                cell.repoName.text = event.repo.name
+                cell.ownerButton.setTitle("@"+event.actor.login, for: .normal)
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd-MM-yyyy"
+                cell.repoCreation.text = dateFormatter.string(from: event.createdAt)
+            }
+            .disposed(by: self.disposeBag)
+        
+        self.tableView.rx
+            .modelSelected(GHEvent.self)
+            .subscribe(onNext:  { value in
+                self.selectedUser = value.actor
+            })
+            .disposed(by: self.disposeBag)
+        
+    }
+    
+    @IBAction func refreshFeed(_ sender: Any) {
+        self.loadEventFeed()
     }
     
     // MARK: - EventCellDelegate

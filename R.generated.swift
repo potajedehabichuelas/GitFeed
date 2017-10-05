@@ -89,8 +89,21 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.string` struct is generated, and contains static references to 0 localization tables.
+  /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
+    /// This `R.string.localizable` struct is generated, and contains static references to 1 localization keys.
+    struct localizable {
+      /// Value: Oups! the information about this event has not been parsed yet😅
+      static let noInformationAvailable = Rswift.StringResource(key: "No Information Available", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      
+      /// Value: Oups! the information about this event has not been parsed yet😅
+      static func noInformationAvailable(_: Void = ()) -> String {
+        return NSLocalizedString("No Information Available", bundle: R.hostingBundle, comment: "")
+      }
+      
+      fileprivate init() {}
+    }
+    
     fileprivate init() {}
   }
   

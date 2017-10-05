@@ -12,6 +12,8 @@ import RxSwift
 import Rswift
 import NVActivityIndicatorView
 import SafariServices
+import RMessage
+import Rswift
 
 class GHEventsFeedTableViewController: UITableViewController, EventCellDelegate, NVActivityIndicatorViewable {
     
@@ -83,8 +85,13 @@ class GHEventsFeedTableViewController: UITableViewController, EventCellDelegate,
         self.tableView.rx
             .modelSelected(GHEvent.self)
             .subscribe(onNext:  { value in
+                
                 self.selectedUser = value.actor
                 self.selectedEvent = value
+                
+                if self.selectedEvent?.commitComment == nil {
+                    RMessage.showNotification(withTitle: R.string.localizable.noInformationAvailable(), subtitle: "", type: .error, customTypeName: "", callback: nil)
+                }
             })
             .disposed(by: self.disposeBag)
         
@@ -123,6 +130,14 @@ class GHEventsFeedTableViewController: UITableViewController, EventCellDelegate,
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "dd-MM-yyyy"
                 cell.repoCreation.text = dateFormatter.string(from: event.createdAt)
+                
+                //If there is a commit message we set the imageview bg as green
+                //to notify the user that there is information available, as there are many types of event and we've only parsed a little number
+                if event.commitComment != nil {
+                     cell.detailsAvailable.backgroundColor = UIColor(red: 51/255, green: 124/255, blue: 43/255, alpha: 1.0) /* #337c2b */
+                } else {
+                    cell.detailsAvailable.backgroundColor = UIColor(red: 166/255, green: 59/255, blue: 58/255, alpha: 1.0) /* #a63b3a */
+                }
             }
             .disposed(by: disposeBag)
     }
@@ -151,6 +166,8 @@ class GHEventsFeedTableViewController: UITableViewController, EventCellDelegate,
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == R.segue.ghEventsFeedTableViewController.userProfileSegue.identifier && self.selectedUser != nil {
+            return true
+        } else if self.selectedEvent?.commitComment != nil {
             return true
         } else {
             return false

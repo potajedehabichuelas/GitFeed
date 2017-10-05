@@ -20,6 +20,7 @@ class EventMainTableViewCell: UITableViewCell {
     
     @IBOutlet weak var repoCreation: UILabel!
     
+    @IBOutlet weak var detailsAvailable: UIImageView!
     var user: GHUser?
     
     var delegate:EventCellDelegate?

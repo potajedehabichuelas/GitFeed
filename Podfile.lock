@@ -12,6 +12,13 @@ PODS:
   - RMessage (2.1.5):
     - HexColors (~> 4.0)
     - PPTopMostController
+  - RxBlocking (3.6.1):
+    - RxSwift (~> 3.6)
+  - RxCocoa (3.6.1):
+    - RxSwift (~> 3.6)
+  - RxSwift (3.6.1)
+  - RxTest (3.6.1):
+    - RxSwift (~> 3.6)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
@@ -20,6 +27,10 @@ DEPENDENCIES:
   - NVActivityIndicatorView
   - R.swift
   - RMessage
+  - RxBlocking (~> 3.0)
+  - RxCocoa (~> 3.0)
+  - RxSwift (~> 3.0)
+  - RxTest (~> 3.0)
   - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -31,8 +42,12 @@ SPEC CHECKSUMS:
   R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
   R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
   RMessage: 31d44bd26a8f353f987d2e7194f3e9ffb203cbf2
+  RxBlocking: 4f4bd5732e8b952e54ae8a57739bcfb645de12bc
+  RxCocoa: 84a08739ab186248c7f31ce4ee92d6f8a947d690
+  RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
+  RxTest: 1d00348a7848c91ab5bf5d197d2378aa6b2bb356
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: fa69003266e86745e1d087dfbec08f8a167fbf2c
+PODFILE CHECKSUM: a27df01d4be3e16d57fe8f399e0c374420c3e08f
 
 COCOAPODS: 1.3.1

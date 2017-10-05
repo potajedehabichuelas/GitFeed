@@ -18,6 +18,15 @@
 		338442FE1F85BFEC009FDA9F /* GFNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338442FD1F85BFEC009FDA9F /* GFNetworkManager.swift */; };
 		338443001F85C007009FDA9F /* GFNetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338442FF1F85C007009FDA9F /* GFNetworkRouter.swift */; };
 		33F65B8B1F85CA3B00FF17B9 /* GFNetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F65B8A1F85CA3B00FF17B9 /* GFNetworkManagerTests.swift */; };
+		33F65B911F85D0FF00FF17B9 /* GHUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F65B901F85D0FF00FF17B9 /* GHUser.swift */; };
+		33F65B931F85D10900FF17B9 /* GHEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F65B921F85D10900FF17B9 /* GHEvent.swift */; };
+		33F65B951F85D12100FF17B9 /* GHRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F65B941F85D12100FF17B9 /* GHRepo.swift */; };
+		33F65B971F869BE100FF17B9 /* GHUserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F65B961F869BE100FF17B9 /* GHUserTests.swift */; };
+		33F65B991F869BEA00FF17B9 /* GHEventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F65B981F869BEA00FF17B9 /* GHEventTests.swift */; };
+		33F65B9B1F869BF400FF17B9 /* GHRepoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F65B9A1F869BF400FF17B9 /* GHRepoTests.swift */; };
+		33F65B9D1F869CB600FF17B9 /* testEvent.json in Resources */ = {isa = PBXBuildFile; fileRef = 33F65B9C1F869CB600FF17B9 /* testEvent.json */; };
+		33F65B9F1F86A01A00FF17B9 /* testUser.json in Resources */ = {isa = PBXBuildFile; fileRef = 33F65B9E1F86A01A00FF17B9 /* testUser.json */; };
+		33F65BA11F86A1B500FF17B9 /* testRepo.json in Resources */ = {isa = PBXBuildFile; fileRef = 33F65BA01F86A1B500FF17B9 /* testRepo.json */; };
 		3E6F06AAAD39909D5AC483DF /* Pods_GitFeedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 867F8AD5B2E8EF43A5D89D93 /* Pods_GitFeedTests.framework */; };
 		C4BCCA94083E56A50F1B5D40 /* Pods_GitFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C35EC682ED615897A8A7D9A /* Pods_GitFeed.framework */; };
 /* End PBXBuildFile section */
@@ -58,6 +67,15 @@
 		338442FD1F85BFEC009FDA9F /* GFNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFNetworkManager.swift; sourceTree = "<group>"; };
 		338442FF1F85C007009FDA9F /* GFNetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFNetworkRouter.swift; sourceTree = "<group>"; };
 		33F65B8A1F85CA3B00FF17B9 /* GFNetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFNetworkManagerTests.swift; sourceTree = "<group>"; };
+		33F65B901F85D0FF00FF17B9 /* GHUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHUser.swift; sourceTree = "<group>"; };
+		33F65B921F85D10900FF17B9 /* GHEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEvent.swift; sourceTree = "<group>"; };
+		33F65B941F85D12100FF17B9 /* GHRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHRepo.swift; sourceTree = "<group>"; };
+		33F65B961F869BE100FF17B9 /* GHUserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHUserTests.swift; sourceTree = "<group>"; };
+		33F65B981F869BEA00FF17B9 /* GHEventTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEventTests.swift; sourceTree = "<group>"; };
+		33F65B9A1F869BF400FF17B9 /* GHRepoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHRepoTests.swift; sourceTree = "<group>"; };
+		33F65B9C1F869CB600FF17B9 /* testEvent.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testEvent.json; sourceTree = "<group>"; };
+		33F65B9E1F86A01A00FF17B9 /* testUser.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testUser.json; sourceTree = "<group>"; };
+		33F65BA01F86A1B500FF17B9 /* testRepo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testRepo.json; sourceTree = "<group>"; };
 		39F69EE6B277B325505EFC03 /* Pods-GitFeedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitFeedTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitFeedTests/Pods-GitFeedTests.release.xcconfig"; sourceTree = "<group>"; };
 		454DACABC3A29E78D8262FCA /* Pods-GitFeedUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitFeedUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitFeedUITests/Pods-GitFeedUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7C35EC682ED615897A8A7D9A /* Pods_GitFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,9 +166,15 @@
 		338442DB1F853923009FDA9F /* GitFeedTests */ = {
 			isa = PBXGroup;
 			children = (
+				33F65B9A1F869BF400FF17B9 /* GHRepoTests.swift */,
+				33F65B981F869BEA00FF17B9 /* GHEventTests.swift */,
+				33F65B961F869BE100FF17B9 /* GHUserTests.swift */,
 				33F65B8A1F85CA3B00FF17B9 /* GFNetworkManagerTests.swift */,
 				338442DC1F853923009FDA9F /* GitFeedTests.swift */,
 				338442DE1F853923009FDA9F /* Info.plist */,
+				33F65B9C1F869CB600FF17B9 /* testEvent.json */,
+				33F65B9E1F86A01A00FF17B9 /* testUser.json */,
+				33F65BA01F86A1B500FF17B9 /* testRepo.json */,
 			);
 			path = GitFeedTests;
 			sourceTree = "<group>";
@@ -205,6 +229,9 @@
 		338442FB1F853974009FDA9F /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				33F65B901F85D0FF00FF17B9 /* GHUser.swift */,
+				33F65B921F85D10900FF17B9 /* GHEvent.swift */,
+				33F65B941F85D12100FF17B9 /* GHRepo.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -348,6 +375,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33F65B9F1F86A01A00FF17B9 /* testUser.json in Resources */,
+				33F65B9D1F869CB600FF17B9 /* testEvent.json in Resources */,
+				33F65BA11F86A1B500FF17B9 /* testRepo.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,9 +578,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				338443001F85C007009FDA9F /* GFNetworkRouter.swift in Sources */,
+				33F65B951F85D12100FF17B9 /* GHRepo.swift in Sources */,
 				338442FC1F853974009FDA9F /* ViewController.swift in Sources */,
 				338442C81F853923009FDA9F /* AppDelegate.swift in Sources */,
+				33F65B911F85D0FF00FF17B9 /* GHUser.swift in Sources */,
 				338442FE1F85BFEC009FDA9F /* GFNetworkManager.swift in Sources */,
+				33F65B931F85D10900FF17B9 /* GHEvent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +591,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33F65B971F869BE100FF17B9 /* GHUserTests.swift in Sources */,
+				33F65B9B1F869BF400FF17B9 /* GHRepoTests.swift in Sources */,
+				33F65B991F869BEA00FF17B9 /* GHEventTests.swift in Sources */,
 				338442DD1F853923009FDA9F /* GitFeedTests.swift in Sources */,
 				33F65B8B1F85CA3B00FF17B9 /* GFNetworkManagerTests.swift in Sources */,
 			);

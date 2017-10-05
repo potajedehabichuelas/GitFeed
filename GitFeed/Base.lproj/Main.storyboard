@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -44,11 +45,11 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Utv-Em-lcv">
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Utv-Em-lcv">
                                                     <rect key="frame" x="0.0" y="40" width="349" height="30"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a20-P2-e52">
-                                                            <rect key="frame" x="0.0" y="0.0" width="259" height="30"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a20-P2-e52">
+                                                            <rect key="frame" x="0.0" y="0.0" width="239" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="SPd-nP-OsZ"/>
                                                             </constraints>
@@ -56,8 +57,16 @@
                                                             <state key="normal" title="@userName">
                                                                 <color key="titleColor" red="0.23455107210000001" green="0.364438653" blue="0.4023708701" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                                    <integer key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                             <connections>
-                                                                <action selector="showOwner:" destination="HYe-uv-STW" eventType="touchUpInside" id="0TL-jS-R6c"/>
+                                                                <action selector="showUserProfile:" destination="HYe-uv-STW" eventType="touchUpInside" id="B3w-ud-i79"/>
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qK-eJ-YL8">
@@ -95,10 +104,93 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="GitHub Feed" id="Bw0-2w-MTZ"/>
+                    <connections>
+                        <segue destination="K48-XV-GWf" kind="show" identifier="userProfileSegue" id="DSR-X7-dE7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Mw-1L-XYN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="656.79999999999995" y="54.422788605697157"/>
+        </scene>
+        <!--User Profile View Controller-->
+        <scene sceneID="Ql0-Em-xHR">
+            <objects>
+                <viewController id="K48-XV-GWf" customClass="UserProfileViewController" customModule="GitFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zkO-iY-Sse">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zxx-i3-w1c">
+                                <rect key="frame" x="97" y="109" width="180" height="180"/>
+                                <color key="backgroundColor" red="0.57254901960000004" green="0.56470588239999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="4ze-td-VX3"/>
+                                    <constraint firstAttribute="width" constant="180" id="q1T-9K-jbY"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="90"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="6fZ-F1-3sk">
+                                <rect key="frame" x="20" y="314" width="335" height="85.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="@Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="6LL-Dp-2Wj">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="25.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wD-tc-d0i">
+                                        <rect key="frame" x="0.0" y="55.5" width="335" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="mZ1-fb-ivJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="ProfileUrl">
+                                            <color key="titleColor" red="0.23455107210000001" green="0.364438653" blue="0.4023708701" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showUserProfileWeb:" destination="K48-XV-GWf" eventType="touchUpInside" id="aMa-WW-jD9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wiN-1U-Rgh" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                <rect key="frame" x="162" y="174" width="50" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3mT-qj-gS1"/>
+                                    <constraint firstAttribute="width" constant="50" id="fOR-Xu-qaE"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.87058823529999996" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zxx-i3-w1c" firstAttribute="top" secondItem="iZM-MA-OhB" secondAttribute="top" constant="45" id="0xD-lV-qei"/>
+                            <constraint firstItem="wiN-1U-Rgh" firstAttribute="top" secondItem="iZM-MA-OhB" secondAttribute="top" constant="110" id="8kE-e9-IXH"/>
+                            <constraint firstItem="zxx-i3-w1c" firstAttribute="centerX" secondItem="zkO-iY-Sse" secondAttribute="centerX" id="C0F-dI-gNd"/>
+                            <constraint firstItem="6fZ-F1-3sk" firstAttribute="leading" secondItem="iZM-MA-OhB" secondAttribute="leading" constant="20" id="FXg-VT-qPf"/>
+                            <constraint firstItem="iZM-MA-OhB" firstAttribute="trailing" secondItem="6fZ-F1-3sk" secondAttribute="trailing" constant="20" id="MaP-cL-NvH"/>
+                            <constraint firstItem="wiN-1U-Rgh" firstAttribute="centerX" secondItem="zkO-iY-Sse" secondAttribute="centerX" id="cWV-yu-SZO"/>
+                            <constraint firstItem="6fZ-F1-3sk" firstAttribute="top" secondItem="zxx-i3-w1c" secondAttribute="bottom" constant="25" id="tsv-Yv-bYL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iZM-MA-OhB"/>
+                    </view>
+                    <connections>
+                        <outlet property="avatarActivityIndicator" destination="wiN-1U-Rgh" id="pr1-8t-w1h"/>
+                        <outlet property="gitProfileButton" destination="2wD-tc-d0i" id="KEY-Yd-dRN"/>
+                        <outlet property="profileAvatar" destination="zxx-i3-w1c" id="fis-eh-Gwn"/>
+                        <outlet property="userLoginName" destination="6LL-Dp-2Wj" id="bzQ-DH-f0X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="syq-dn-LNN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1580" y="-434.03298350824593"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dwF-1t-DtH">
@@ -107,6 +199,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Rxs-Aq-tOa">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.43137254899999999" green="0.3294117647" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

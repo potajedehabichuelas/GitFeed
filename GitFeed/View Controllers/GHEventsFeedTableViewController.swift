@@ -17,6 +17,8 @@ class GHEventsFeedTableViewController: UITableViewController, EventCellDelegate,
     
     let disposeBag = DisposeBag()
     
+    var selectedUser: GHUser?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,10 +40,11 @@ class GHEventsFeedTableViewController: UITableViewController, EventCellDelegate,
             currentEvents
                 .bind(to: self.tableView.rx.items(cellIdentifier: R.reuseIdentifier.eventMainCellId.identifier, cellType: EventMainTableViewCell.self)) { (row, event, cell) in
                     cell.delegate = self
+                    cell.user = event.actor
+                    
                     cell.repoName.text = event.repo.name
                     cell.ownerButton.setTitle("@"+event.actor.login, for: .normal)
                     
-                    cell.repoOwnerLogin = event.actor.login
                     let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "dd-MM-yyyy"
                     cell.repoCreation.text = dateFormatter.string(from: event.createdAt)
@@ -51,7 +54,7 @@ class GHEventsFeedTableViewController: UITableViewController, EventCellDelegate,
             self.tableView.rx
                 .modelSelected(GHEvent.self)
                 .subscribe(onNext:  { value in
-                   print("tapped")
+                    self.selectedUser = value.actor
                 })
                 .disposed(by: self.disposeBag)
             
@@ -76,20 +79,37 @@ class GHEventsFeedTableViewController: UITableViewController, EventCellDelegate,
     
     // MARK: - EventCellDelegate
     
+    func showUserProfile(user: GHUser) {
+        self.selectedUser = user
+        self.performSegue(withIdentifier: R.segue.ghEventsFeedTableViewController.userProfileSegue.identifier, sender: self)
+    }
+    
     func openGitUserPage(url: URL) {
         //Open github user page
         let svc = SFSafariViewController(url: url)
         self.present(svc, animated: true, completion: nil)
     }
 
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == R.segue.ghEventsFeedTableViewController.userProfileSegue.identifier && self.selectedUser != nil {
+            return true
+        } else {
+            return false
+        }
     }
-    */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == R.segue.ghEventsFeedTableViewController.userProfileSegue.identifier {
+            guard let destVc = segue.destination as? UserProfileViewController else { return }
+            guard let selUser = self.selectedUser else {
+                print("Error showing user profile: Selected user was not set")
+                return
+            }
+            destVc.user = selUser
+        }
+    }
+    
 
 }

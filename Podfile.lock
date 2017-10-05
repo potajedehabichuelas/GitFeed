@@ -19,6 +19,9 @@ PODS:
   - RxSwift (4.0.0-beta.1)
   - RxTest (4.0.0-beta.1):
     - RxSwift (~> 4.0.0-beta.1)
+  - SDWebImage (4.1.0):
+    - SDWebImage/Core (= 4.1.0)
+  - SDWebImage/Core (4.1.0)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
@@ -31,6 +34,7 @@ DEPENDENCIES:
   - RxCocoa (from `https://github.com/ReactiveX/RxSwift.git`, branch `rxswift4.0-swift4.0`)
   - RxSwift (from `https://github.com/ReactiveX/RxSwift.git`, branch `rxswift4.0-swift4.0`)
   - RxTest (from `https://github.com/ReactiveX/RxSwift.git`, branch `rxswift4.0-swift4.0`)
+  - SDWebImage
   - SwiftyJSON
 
 EXTERNAL SOURCES:
@@ -74,8 +78,9 @@ SPEC CHECKSUMS:
   RxCocoa: 009b86b0b158d4a7e4a5fc29bbdc0688c44fa3bb
   RxSwift: 9488787dfac649ffc1c4fddf3a3b4d6823d0b392
   RxTest: d6a7b38f5cae134999459771e6ae1c9308b76ee4
+  SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 5c9c79b3998aef98e8f1ddad4a19431c003a9aa5
+PODFILE CHECKSUM: b16e391a07584f599bcde53ad350dc838de87b28
 
 COCOAPODS: 1.3.1

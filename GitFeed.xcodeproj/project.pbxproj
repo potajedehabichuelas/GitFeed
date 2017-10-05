@@ -32,6 +32,7 @@
 		33F65BA71F86AE4C00FF17B9 /* GHCommitCommentTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F65BA61F86AE4C00FF17B9 /* GHCommitCommentTest.swift */; };
 		33F65BA91F86B41100FF17B9 /* GHEventsFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F65BA81F86B41100FF17B9 /* GHEventsFeedTableViewController.swift */; };
 		33F65BAB1F86B6C200FF17B9 /* EventMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F65BAA1F86B6C200FF17B9 /* EventMainTableViewCell.swift */; };
+		33FA41121F86C92E00CB1936 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FA41111F86C92E00CB1936 /* UserProfileViewController.swift */; };
 		3E6F06AAAD39909D5AC483DF /* Pods_GitFeedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 867F8AD5B2E8EF43A5D89D93 /* Pods_GitFeedTests.framework */; };
 		C4BCCA94083E56A50F1B5D40 /* Pods_GitFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C35EC682ED615897A8A7D9A /* Pods_GitFeed.framework */; };
 /* End PBXBuildFile section */
@@ -86,6 +87,7 @@
 		33F65BA61F86AE4C00FF17B9 /* GHCommitCommentTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHCommitCommentTest.swift; sourceTree = "<group>"; };
 		33F65BA81F86B41100FF17B9 /* GHEventsFeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEventsFeedTableViewController.swift; sourceTree = "<group>"; };
 		33F65BAA1F86B6C200FF17B9 /* EventMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMainTableViewCell.swift; sourceTree = "<group>"; };
+		33FA41111F86C92E00CB1936 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		39F69EE6B277B325505EFC03 /* Pods-GitFeedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitFeedTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitFeedTests/Pods-GitFeedTests.release.xcconfig"; sourceTree = "<group>"; };
 		454DACABC3A29E78D8262FCA /* Pods-GitFeedUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitFeedUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitFeedUITests/Pods-GitFeedUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7C35EC682ED615897A8A7D9A /* Pods_GitFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				33F65BA81F86B41100FF17B9 /* GHEventsFeedTableViewController.swift */,
+				33FA41111F86C92E00CB1936 /* UserProfileViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 				"${BUILT_PRODUCTS_DIR}/RMessage/RMessage.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -520,6 +524,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RMessage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -616,6 +621,7 @@
 				338442FE1F85BFEC009FDA9F /* GFNetworkManager.swift in Sources */,
 				33CAA5D21F86BD51002EDCA4 /* R.generated.swift in Sources */,
 				33F65B931F85D10900FF17B9 /* GHEvent.swift in Sources */,
+				33FA41121F86C92E00CB1936 /* UserProfileViewController.swift in Sources */,
 				33F65BA91F86B41100FF17B9 /* GHEventsFeedTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

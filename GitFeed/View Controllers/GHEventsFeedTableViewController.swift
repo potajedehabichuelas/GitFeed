@@ -19,7 +19,11 @@ class GHEventsFeedTableViewController: UITableViewController, EventCellDelegate,
     
     var selectedUser: GHUser?
     
+    var selectedEvent: GHEvent?
+    
     var currentEvents = Variable<[GHEvent]>([])
+    
+    let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +36,7 @@ class GHEventsFeedTableViewController: UITableViewController, EventCellDelegate,
         
         NVActivityIndicatorView.DEFAULT_TYPE = .pacman
         
+        self.configureSearchController()
         self.setUpTableView()
         self.loadEventFeed()
     }
@@ -51,6 +56,17 @@ class GHEventsFeedTableViewController: UITableViewController, EventCellDelegate,
         // Dispose of any resources that can be recreated.
     }
     
+    func configureSearchController() {
+
+        self.searchController.dimsBackgroundDuringPresentation = false
+        self.searchController.searchBar.placeholder = "filter Events"
+        self.searchController.hidesNavigationBarDuringPresentation = false
+        self.tableView.tableHeaderView = searchController.searchBar
+        
+        // Place the search bar view to the tableview headerview.
+        self.tableView.tableHeaderView = self.searchController.searchBar
+    }
+    
     func loadEventFeed() {
         
         self.startAnimating()
@@ -63,8 +79,41 @@ class GHEventsFeedTableViewController: UITableViewController, EventCellDelegate,
     }
     
     func setUpTableView() {
-        self.currentEvents.asObservable()
-            .bind(to: self.tableView.rx.items(cellIdentifier: R.reuseIdentifier.eventMainCellId.identifier, cellType: EventMainTableViewCell.self)) { (row, event, cell) in
+   
+        self.tableView.rx
+            .modelSelected(GHEvent.self)
+            .subscribe(onNext:  { value in
+                self.selectedUser = value.actor
+                self.selectedEvent = value
+            })
+            .disposed(by: self.disposeBag)
+        
+        // Set up event filtering
+        
+        let searchBar = self.searchController.searchBar
+        
+        let searchResults = searchBar.rx.text.orEmpty
+            .throttle(0.3, scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .flatMapLatest { query -> Observable<[GHEvent]> in
+                if query.isEmpty {
+                    return self.currentEvents.asObservable()
+                }
+                var filteredArray = [GHEvent]()
+                for ev in self.currentEvents.value {
+                    if ev.repo.name.lowercased().range(of: query.lowercased()) != nil {
+                        filteredArray.append(ev)
+                    }
+                }
+                return  Observable.just(filteredArray)
+                .catchErrorJustReturn([])
+            }
+            .observeOn(MainScheduler.instance)
+        
+        searchResults
+            .bind(to: self.tableView.rx.items(cellIdentifier: R.reuseIdentifier.eventMainCellId.identifier, cellType: EventMainTableViewCell.self)) {
+                (index, event: GHEvent, cell) in
+                
                 cell.delegate = self
                 cell.user = event.actor
                 
@@ -75,15 +124,7 @@ class GHEventsFeedTableViewController: UITableViewController, EventCellDelegate,
                 dateFormatter.dateFormat = "dd-MM-yyyy"
                 cell.repoCreation.text = dateFormatter.string(from: event.createdAt)
             }
-            .disposed(by: self.disposeBag)
-        
-        self.tableView.rx
-            .modelSelected(GHEvent.self)
-            .subscribe(onNext:  { value in
-                self.selectedUser = value.actor
-            })
-            .disposed(by: self.disposeBag)
-        
+            .disposed(by: disposeBag)
     }
     
     @IBAction func refreshFeed(_ sender: Any) {
@@ -95,6 +136,9 @@ class GHEventsFeedTableViewController: UITableViewController, EventCellDelegate,
     func showUserProfile(user: GHUser) {
         self.selectedUser = user
         self.performSegue(withIdentifier: R.segue.ghEventsFeedTableViewController.userProfileSegue.identifier, sender: self)
+        
+        //Dismiss search view controller
+        self.searchController.dismiss(animated: false, completion: nil)
     }
     
     func openGitUserPage(url: URL) {

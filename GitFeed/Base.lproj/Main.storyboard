@@ -27,7 +27,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="SvQ-5T-4Xz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.87058823529999996" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EventMainCellId" rowHeight="106" id="HYe-uv-STW" customClass="EventMainTableViewCell" customModule="GitFeed" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="106"/>
@@ -118,7 +118,7 @@
             </objects>
             <point key="canvasLocation" x="656.79999999999995" y="54.422788605697157"/>
         </scene>
-        <!--User Profile View Controller-->
+        <!--User Profile-->
         <scene sceneID="Ql0-Em-xHR">
             <objects>
                 <viewController id="K48-XV-GWf" customClass="UserProfileViewController" customModule="GitFeed" customModuleProvider="target" sceneMemberID="viewController">
@@ -187,6 +187,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iZM-MA-OhB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="User Profile" id="kyh-oH-7dv"/>
                     <connections>
                         <outlet property="avatarActivityIndicator" destination="wiN-1U-Rgh" id="pr1-8t-w1h"/>
                         <outlet property="gitProfileButton" destination="2wD-tc-d0i" id="KEY-Yd-dRN"/>

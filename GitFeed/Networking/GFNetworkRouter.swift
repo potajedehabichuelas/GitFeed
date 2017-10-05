@@ -13,6 +13,7 @@ import Alamofire
 struct GithubUrl {
     static let base = "https://git.io/"
     static let events = "vDdS9"
+    static let htmlBase = "https://github.com/"
 }
 
 enum GFNetworRouter: URLRequestConvertible {

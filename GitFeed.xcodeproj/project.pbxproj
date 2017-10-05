@@ -14,9 +14,9 @@
 		338442D21F853923009FDA9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 338442D01F853923009FDA9F /* LaunchScreen.storyboard */; };
 		338442DD1F853923009FDA9F /* GitFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338442DC1F853923009FDA9F /* GitFeedTests.swift */; };
 		338442E81F853923009FDA9F /* GitFeedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338442E71F853923009FDA9F /* GitFeedUITests.swift */; };
-		338442FC1F853974009FDA9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338442F71F853974009FDA9F /* ViewController.swift */; };
 		338442FE1F85BFEC009FDA9F /* GFNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338442FD1F85BFEC009FDA9F /* GFNetworkManager.swift */; };
 		338443001F85C007009FDA9F /* GFNetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338442FF1F85C007009FDA9F /* GFNetworkRouter.swift */; };
+		33CAA5D21F86BD51002EDCA4 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CAA5D11F86BD51002EDCA4 /* R.generated.swift */; };
 		33F65B8B1F85CA3B00FF17B9 /* GFNetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F65B8A1F85CA3B00FF17B9 /* GFNetworkManagerTests.swift */; };
 		33F65B911F85D0FF00FF17B9 /* GHUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F65B901F85D0FF00FF17B9 /* GHUser.swift */; };
 		33F65B931F85D10900FF17B9 /* GHEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F65B921F85D10900FF17B9 /* GHEvent.swift */; };
@@ -30,6 +30,8 @@
 		33F65BA31F86AC0100FF17B9 /* GHCommitComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F65BA21F86AC0100FF17B9 /* GHCommitComment.swift */; };
 		33F65BA51F86AD0F00FF17B9 /* testCommitComment.json in Resources */ = {isa = PBXBuildFile; fileRef = 33F65BA41F86AD0F00FF17B9 /* testCommitComment.json */; };
 		33F65BA71F86AE4C00FF17B9 /* GHCommitCommentTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F65BA61F86AE4C00FF17B9 /* GHCommitCommentTest.swift */; };
+		33F65BA91F86B41100FF17B9 /* GHEventsFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F65BA81F86B41100FF17B9 /* GHEventsFeedTableViewController.swift */; };
+		33F65BAB1F86B6C200FF17B9 /* EventMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F65BAA1F86B6C200FF17B9 /* EventMainTableViewCell.swift */; };
 		3E6F06AAAD39909D5AC483DF /* Pods_GitFeedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 867F8AD5B2E8EF43A5D89D93 /* Pods_GitFeedTests.framework */; };
 		C4BCCA94083E56A50F1B5D40 /* Pods_GitFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C35EC682ED615897A8A7D9A /* Pods_GitFeed.framework */; };
 /* End PBXBuildFile section */
@@ -66,9 +68,9 @@
 		338442E31F853923009FDA9F /* GitFeedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitFeedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		338442E71F853923009FDA9F /* GitFeedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitFeedUITests.swift; sourceTree = "<group>"; };
 		338442E91F853923009FDA9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		338442F71F853974009FDA9F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		338442FD1F85BFEC009FDA9F /* GFNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFNetworkManager.swift; sourceTree = "<group>"; };
 		338442FF1F85C007009FDA9F /* GFNetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFNetworkRouter.swift; sourceTree = "<group>"; };
+		33CAA5D11F86BD51002EDCA4 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		33F65B8A1F85CA3B00FF17B9 /* GFNetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFNetworkManagerTests.swift; sourceTree = "<group>"; };
 		33F65B901F85D0FF00FF17B9 /* GHUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHUser.swift; sourceTree = "<group>"; };
 		33F65B921F85D10900FF17B9 /* GHEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEvent.swift; sourceTree = "<group>"; };
@@ -82,6 +84,8 @@
 		33F65BA21F86AC0100FF17B9 /* GHCommitComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHCommitComment.swift; sourceTree = "<group>"; };
 		33F65BA41F86AD0F00FF17B9 /* testCommitComment.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testCommitComment.json; sourceTree = "<group>"; };
 		33F65BA61F86AE4C00FF17B9 /* GHCommitCommentTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHCommitCommentTest.swift; sourceTree = "<group>"; };
+		33F65BA81F86B41100FF17B9 /* GHEventsFeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEventsFeedTableViewController.swift; sourceTree = "<group>"; };
+		33F65BAA1F86B6C200FF17B9 /* EventMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMainTableViewCell.swift; sourceTree = "<group>"; };
 		39F69EE6B277B325505EFC03 /* Pods-GitFeedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitFeedTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitFeedTests/Pods-GitFeedTests.release.xcconfig"; sourceTree = "<group>"; };
 		454DACABC3A29E78D8262FCA /* Pods-GitFeedUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitFeedUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitFeedUITests/Pods-GitFeedUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7C35EC682ED615897A8A7D9A /* Pods_GitFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,6 +203,7 @@
 		338442F51F853974009FDA9F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				33CAA5D11F86BD51002EDCA4 /* R.generated.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -206,7 +211,7 @@
 		338442F61F853974009FDA9F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				338442F71F853974009FDA9F /* ViewController.swift */,
+				33F65BA81F86B41100FF17B9 /* GHEventsFeedTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -214,6 +219,7 @@
 		338442F81F853974009FDA9F /* Other Views */ = {
 			isa = PBXGroup;
 			children = (
+				33F65BAA1F86B6C200FF17B9 /* EventMainTableViewCell.swift */,
 			);
 			path = "Other Views";
 			sourceTree = "<group>";
@@ -266,6 +272,7 @@
 			buildConfigurationList = 338442EC1F853923009FDA9F /* Build configuration list for PBXNativeTarget "GitFeed" */;
 			buildPhases = (
 				2391E89221EF888D9476E1A0 /* [CP] Check Pods Manifest.lock */,
+				33CAA5D01F86BD2B002EDCA4 /* ShellScript */,
 				338442C01F853923009FDA9F /* Sources */,
 				338442C11F853923009FDA9F /* Frameworks */,
 				338442C21F853923009FDA9F /* Resources */,
@@ -434,6 +441,19 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		33CAA5D01F86BD2B002EDCA4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"";
+		};
 		A86D9F3757738BD742C06C9B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -589,12 +609,14 @@
 			files = (
 				338443001F85C007009FDA9F /* GFNetworkRouter.swift in Sources */,
 				33F65B951F85D12100FF17B9 /* GHRepo.swift in Sources */,
-				338442FC1F853974009FDA9F /* ViewController.swift in Sources */,
 				33F65BA31F86AC0100FF17B9 /* GHCommitComment.swift in Sources */,
+				33F65BAB1F86B6C200FF17B9 /* EventMainTableViewCell.swift in Sources */,
 				338442C81F853923009FDA9F /* AppDelegate.swift in Sources */,
 				33F65B911F85D0FF00FF17B9 /* GHUser.swift in Sources */,
 				338442FE1F85BFEC009FDA9F /* GFNetworkManager.swift in Sources */,
+				33CAA5D21F86BD51002EDCA4 /* R.generated.swift in Sources */,
 				33F65B931F85D10900FF17B9 /* GHEvent.swift in Sources */,
+				33F65BA91F86B41100FF17B9 /* GHEventsFeedTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

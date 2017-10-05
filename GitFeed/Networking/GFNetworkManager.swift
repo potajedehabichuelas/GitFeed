@@ -16,7 +16,7 @@ class GFNetworkManager: NSObject {
     //Singleton
     static let sharedInstance = GFNetworkManager()
     
-    func getGithubEventFeed(completion: @escaping ([String]?) -> Void) {
+    func getGithubEventFeed(completion: @escaping ([GHEvent]?) -> Void) {
         
         Alamofire.request(GFNetworRouter.getGithubFeed()) .responseJSON { response in
             
@@ -31,10 +31,17 @@ class GFNetworkManager: NSObject {
                 
                 DispatchQueue.global(qos: .background).async {
                     let jsonFeed = JSON(response)
-                    print(jsonFeed)
+                    
+                    guard let feedJSONArray = jsonFeed.array else { completion(nil); return }
+                    
+                    var eventArray = [GHEvent]()
+                    for eventDict in feedJSONArray {
+                        let newEvent = GHEvent(eventDict: eventDict)
+                        eventArray.append(newEvent)
+                    }
                    
                     DispatchQueue.main.async {
-                        completion([])
+                        completion(eventArray)
                     }
                 }
                 

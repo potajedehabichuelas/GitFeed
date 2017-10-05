@@ -8,6 +8,11 @@
 
 import UIKit
 
+import Alamofire
+import SwiftyJSON
+
 class GFNetworkManager: NSObject {
 
+    //Singleton
+    static let sharedInstance = GFNetworkManager()
 }

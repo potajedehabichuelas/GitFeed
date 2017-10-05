@@ -16,6 +16,10 @@ struct GHEventKeys {
     static let id = "id"
     static let actor = "actor"
     static let org = "org"
+    static let repo = "repo"
+    
+    //Event types
+    static let comment = "comment"
 }
 
 class GHEvent: NSObject {
@@ -31,6 +35,8 @@ class GHEvent: NSObject {
     var createdAt: Date
     
     var org: GHUser
+    
+    var commitComment: GHCommitComment?
     
     override init() {
         
@@ -64,12 +70,19 @@ class GHEvent: NSObject {
             self.actor = GHUser(userDict: eventDict[GHEventKeys.actor])
         }
         
+        if eventDict[GHEventKeys.repo] != JSON.null  {
+            self.repo = GHRepo(repoDict: eventDict[GHEventKeys.repo])
+        }
+        
         if eventDict[GHEventKeys.org] != JSON.null  {
             self.org = GHUser(userDict: eventDict[GHEventKeys.org])
         }
         
         if let ePayload = eventDict[GHEventKeys.payload].dictionary {
-            // Detect what kind of event this is ?
+            // Detect what kind of events come with it
+            if let ecommitComment = ePayload[GHEventKeys.comment] {
+                self.commitComment = GHCommitComment(commitCommentDict: ecommitComment)
+            }
         }
     }
 }

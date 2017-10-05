@@ -1,5 +1,5 @@
 //
-//  GHRepoTests.swift
+//  GHCommitCommentTest.swift
 //  GitFeedTests
 //
 //  Created by Daniel Bolivar herrera on 5/10/17.
@@ -8,9 +8,10 @@
 
 import XCTest
 import SwiftyJSON
+
 @testable import GitFeed
 
-class GHRepoTests: XCTestCase {
+class GHCommitCommentTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -22,26 +23,31 @@ class GHRepoTests: XCTestCase {
         super.tearDown()
     }
     
-    func testRepoJSONParser() {
+    func testCommitCommentJSONParser() {
+ 
         let bundle = Bundle(for: type(of: self))
         
-        guard let url = bundle.url(forResource: "testRepo", withExtension: "json") else {
-            XCTFail("Missing file: testRepo.json")
+        guard let url = bundle.url(forResource: "testCommitComment", withExtension: "json") else {
+            XCTFail("Missing file: testCommitComment.json")
             return
         }
         
         do {
             let jsonContents = try Data(contentsOf: url)
             
-            let repoJSON = JSON(jsonContents)
-            let repo = GHRepo(repoDict: repoJSON)
+            let commitCommentJSON = JSON(jsonContents)
+            let comment = GHCommitComment(commitCommentDict: commitCommentJSON)
             
-            XCTAssertEqual(repo.id, 3)
-            XCTAssertEqual(repo.name, "octocat/Hello-World")
-            XCTAssertEqual(repo.url, "https://api.github.com/repos/octocat/Hello-World")
+            XCTAssertEqual(comment.user.id, 6752317)
+            XCTAssertEqual(comment.id, 11056394)
+            XCTAssertEqual(comment.comment, "This is a really good change! :+1:")
+            
+            let isoFormatter = ISO8601DateFormatter()
+            let dateString = isoFormatter.string(from: comment.createdAt)
+            XCTAssertEqual(dateString, "2015-05-05T23:40:29Z")
             
         } catch {
-            XCTFail("Wrong file: testRepo.json")
+            XCTFail("Wrong file: testCommitComment.json")
         }
     }
     
@@ -53,3 +59,4 @@ class GHRepoTests: XCTestCase {
     }
     
 }
+

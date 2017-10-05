@@ -12,6 +12,7 @@ import Alamofire
 
 struct GithubUrl {
     static let base = "https://git.io/"
+    static let events = "vDdS9"
 }
 
 enum GFNetworRouter: URLRequestConvertible {
@@ -30,7 +31,6 @@ enum GFNetworRouter: URLRequestConvertible {
              */
         case .getGithubFeed:
             return .get
-            
         }
     }
     
@@ -39,7 +39,7 @@ enum GFNetworRouter: URLRequestConvertible {
         switch self {
             
         case .getGithubFeed():
-            return "vDdS9"
+            return GithubUrl.events
         }
     }
     
@@ -54,7 +54,7 @@ enum GFNetworRouter: URLRequestConvertible {
     
     func asURLRequest() throws -> URLRequest {
         
-        let url = URL(string: GithubUrl.base)!
+        let url = URL(string: GithubUrl.base+self.path)!
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = self.method.rawValue
         

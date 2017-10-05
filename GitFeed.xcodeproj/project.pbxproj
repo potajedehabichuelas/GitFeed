@@ -17,6 +17,7 @@
 		338442FC1F853974009FDA9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338442F71F853974009FDA9F /* ViewController.swift */; };
 		338442FE1F85BFEC009FDA9F /* GFNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338442FD1F85BFEC009FDA9F /* GFNetworkManager.swift */; };
 		338443001F85C007009FDA9F /* GFNetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338442FF1F85C007009FDA9F /* GFNetworkRouter.swift */; };
+		33F65B8B1F85CA3B00FF17B9 /* GFNetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F65B8A1F85CA3B00FF17B9 /* GFNetworkManagerTests.swift */; };
 		3E6F06AAAD39909D5AC483DF /* Pods_GitFeedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 867F8AD5B2E8EF43A5D89D93 /* Pods_GitFeedTests.framework */; };
 		C4BCCA94083E56A50F1B5D40 /* Pods_GitFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C35EC682ED615897A8A7D9A /* Pods_GitFeed.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,7 @@
 		338442F71F853974009FDA9F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		338442FD1F85BFEC009FDA9F /* GFNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFNetworkManager.swift; sourceTree = "<group>"; };
 		338442FF1F85C007009FDA9F /* GFNetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFNetworkRouter.swift; sourceTree = "<group>"; };
+		33F65B8A1F85CA3B00FF17B9 /* GFNetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFNetworkManagerTests.swift; sourceTree = "<group>"; };
 		39F69EE6B277B325505EFC03 /* Pods-GitFeedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitFeedTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitFeedTests/Pods-GitFeedTests.release.xcconfig"; sourceTree = "<group>"; };
 		454DACABC3A29E78D8262FCA /* Pods-GitFeedUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitFeedUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitFeedUITests/Pods-GitFeedUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7C35EC682ED615897A8A7D9A /* Pods_GitFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +148,7 @@
 		338442DB1F853923009FDA9F /* GitFeedTests */ = {
 			isa = PBXGroup;
 			children = (
+				33F65B8A1F85CA3B00FF17B9 /* GFNetworkManagerTests.swift */,
 				338442DC1F853923009FDA9F /* GitFeedTests.swift */,
 				338442DE1F853923009FDA9F /* Info.plist */,
 			);
@@ -556,6 +559,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				338442DD1F853923009FDA9F /* GitFeedTests.swift in Sources */,
+				33F65B8B1F85CA3B00FF17B9 /* GFNetworkManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

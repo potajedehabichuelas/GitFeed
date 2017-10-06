@@ -18,6 +18,7 @@
 		338442E81F853923009FDA9F /* GitFeedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338442E71F853923009FDA9F /* GitFeedUITests.swift */; };
 		338442FE1F85BFEC009FDA9F /* GFNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338442FD1F85BFEC009FDA9F /* GFNetworkManager.swift */; };
 		338443001F85C007009FDA9F /* GFNetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338442FF1F85C007009FDA9F /* GFNetworkRouter.swift */; };
+		33A67BB81F87049A00703863 /* CommitCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A67BB71F87049A00703863 /* CommitCommentTableViewCell.swift */; };
 		33CAA5D21F86BD51002EDCA4 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CAA5D11F86BD51002EDCA4 /* R.generated.swift */; };
 		33F65B8B1F85CA3B00FF17B9 /* GFNetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F65B8A1F85CA3B00FF17B9 /* GFNetworkManagerTests.swift */; };
 		33F65B911F85D0FF00FF17B9 /* GHUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F65B901F85D0FF00FF17B9 /* GHUser.swift */; };
@@ -75,6 +76,7 @@
 		338442E91F853923009FDA9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		338442FD1F85BFEC009FDA9F /* GFNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFNetworkManager.swift; sourceTree = "<group>"; };
 		338442FF1F85C007009FDA9F /* GFNetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFNetworkRouter.swift; sourceTree = "<group>"; };
+		33A67BB71F87049A00703863 /* CommitCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitCommentTableViewCell.swift; sourceTree = "<group>"; };
 		33CAA5D11F86BD51002EDCA4 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		33F65B8A1F85CA3B00FF17B9 /* GFNetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFNetworkManagerTests.swift; sourceTree = "<group>"; };
 		33F65B901F85D0FF00FF17B9 /* GHUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHUser.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				33F65BAA1F86B6C200FF17B9 /* EventMainTableViewCell.swift */,
+				33A67BB71F87049A00703863 /* CommitCommentTableViewCell.swift */,
 			);
 			path = "Other Views";
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				338443001F85C007009FDA9F /* GFNetworkRouter.swift in Sources */,
 				33F65B951F85D12100FF17B9 /* GHRepo.swift in Sources */,
 				33F65BA31F86AC0100FF17B9 /* GHCommitComment.swift in Sources */,
+				33A67BB81F87049A00703863 /* CommitCommentTableViewCell.swift in Sources */,
 				33F65BAB1F86B6C200FF17B9 /* EventMainTableViewCell.swift in Sources */,
 				338442C81F853923009FDA9F /* AppDelegate.swift in Sources */,
 				33F65B911F85D0FF00FF17B9 /* GHUser.swift in Sources */,

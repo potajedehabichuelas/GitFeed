@@ -182,6 +182,13 @@ class GHEventsFeedTableViewController: UITableViewController, EventCellDelegate,
                 return
             }
             destVc.user = selUser
+        } else if segue.identifier == R.segue.ghEventsFeedTableViewController.eventDetailsSegue.identifier {
+            guard let destVc = segue.destination as? EventDetailsTableViewController else { return }
+            guard let selCommitComment = self.selectedEvent?.commitComment else {
+                print("Error showing event info: Selected Event was not set")
+                return
+            }
+            destVc.commitComment = selCommitComment
         }
     }
     

@@ -92,6 +92,8 @@ class GHEventsFeedTableViewController: UITableViewController, EventCellDelegate,
                 if self.selectedEvent?.commitComment == nil {
                     RMessage.showNotification(withTitle: R.string.localizable.noInformationAvailable(), subtitle: "", type: .error, customTypeName: "", callback: nil)
                 } else {
+                    //Dismiss search view controller
+                    self.searchController.dismiss(animated: false, completion: nil)
                     self.performSegue(withIdentifier: R.segue.ghEventsFeedTableViewController.eventDetailsSegue.identifier, sender: self)
                 }
             })

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1B78649FFBF275FFE323362D /* Pods_GitFeedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C529B87B30839135E786A5 /* Pods_GitFeedUITests.framework */; };
 		334983C01F86F41100556A04 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 334983BF1F86F41100556A04 /* Localizable.strings */; };
+		334983C21F86FA4E00556A04 /* EventDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334983C11F86FA4E00556A04 /* EventDetailsTableViewController.swift */; };
 		338442C81F853923009FDA9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338442C71F853923009FDA9F /* AppDelegate.swift */; };
 		338442CD1F853923009FDA9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 338442CB1F853923009FDA9F /* Main.storyboard */; };
 		338442CF1F853923009FDA9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 338442CE1F853923009FDA9F /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		0A0727E273CCF7C975DF5C32 /* Pods-GitFeed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitFeed.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitFeed/Pods-GitFeed.release.xcconfig"; sourceTree = "<group>"; };
 		29DB8864CBF4F54DAD1E6493 /* Pods-GitFeed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitFeed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitFeed/Pods-GitFeed.debug.xcconfig"; sourceTree = "<group>"; };
 		334983BF1F86F41100556A04 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		334983C11F86FA4E00556A04 /* EventDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsTableViewController.swift; sourceTree = "<group>"; };
 		338442C41F853923009FDA9F /* GitFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		338442C71F853923009FDA9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		338442CC1F853923009FDA9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 			children = (
 				33F65BA81F86B41100FF17B9 /* GHEventsFeedTableViewController.swift */,
 				33FA41111F86C92E00CB1936 /* UserProfileViewController.swift */,
+				334983C11F86FA4E00556A04 /* EventDetailsTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 				33F65B931F85D10900FF17B9 /* GHEvent.swift in Sources */,
 				33FA41121F86C92E00CB1936 /* UserProfileViewController.swift in Sources */,
 				33F65BA91F86B41100FF17B9 /* GHEventsFeedTableViewController.swift in Sources */,
+				334983C21F86FA4E00556A04 /* EventDetailsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -51,10 +51,19 @@ struct R: Rswift.Validatable {
   
   /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
   struct segue {
-    /// This struct is generated for `GHEventsFeedTableViewController`, and contains static references to 1 segues.
+    /// This struct is generated for `GHEventsFeedTableViewController`, and contains static references to 2 segues.
     struct ghEventsFeedTableViewController {
+      /// Segue identifier `EventDetailsSegue`.
+      static let eventDetailsSegue: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, GHEventsFeedTableViewController, EventDetailsTableViewController> = Rswift.StoryboardSegueIdentifier(identifier: "EventDetailsSegue")
       /// Segue identifier `userProfileSegue`.
       static let userProfileSegue: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, GHEventsFeedTableViewController, UserProfileViewController> = Rswift.StoryboardSegueIdentifier(identifier: "userProfileSegue")
+      
+      /// Optionally returns a typed version of segue `EventDetailsSegue`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func eventDetailsSegue(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, GHEventsFeedTableViewController, EventDetailsTableViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.ghEventsFeedTableViewController.eventDetailsSegue, segue: segue)
+      }
       
       /// Optionally returns a typed version of segue `userProfileSegue`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.

@@ -118,6 +118,9 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="mainViewId"/>
+                        </userDefinedRuntimeAttributes>
                     </tableView>
                     <navigationItem key="navigationItem" title="GitHub Feed" id="Bw0-2w-MTZ">
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="Bhk-aE-zXE">
@@ -126,13 +129,52 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="NO"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="K48-XV-GWf" kind="show" identifier="userProfileSegue" id="DSR-X7-dE7"/>
+                        <segue destination="yV0-Wt-Xrr" kind="show" identifier="EventDetailsSegue" id="SjV-yM-qkI"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Mw-1L-XYN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="656.79999999999995" y="54.422788605697157"/>
+            <point key="canvasLocation" x="609" y="188"/>
+        </scene>
+        <!--Event Details-->
+        <scene sceneID="LNC-G4-dHX">
+            <objects>
+                <tableViewController id="yV0-Wt-Xrr" customClass="EventDetailsTableViewController" customModule="GitFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3AQ-bd-RAp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="YV1-KB-sfw">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YV1-KB-sfw" id="bKy-XL-MeQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="mainViewId"/>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="dataSource" destination="yV0-Wt-Xrr" id="rnu-mo-5HL"/>
+                            <outlet property="delegate" destination="yV0-Wt-Xrr" id="70h-Xb-TKY"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Event Details" id="JfR-LJ-ejB"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8zu-LL-nZE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1580" y="287"/>
         </scene>
         <!--User Profile-->
         <scene sceneID="Ql0-Em-xHR">
@@ -202,8 +244,14 @@
                             <constraint firstItem="6fZ-F1-3sk" firstAttribute="top" secondItem="zxx-i3-w1c" secondAttribute="bottom" constant="25" id="tsv-Yv-bYL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iZM-MA-OhB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="mainViewId"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" title="User Profile" id="kyh-oH-7dv"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="NO"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="avatarActivityIndicator" destination="wiN-1U-Rgh" id="pr1-8t-w1h"/>
                         <outlet property="gitProfileButton" destination="2wD-tc-d0i" id="KEY-Yd-dRN"/>
@@ -228,6 +276,10 @@
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="NO"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="heroNavigationAnimationTypeString" value="none"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="FaQ-CD-zRl" kind="relationship" relationship="rootViewController" id="FRf-mD-EuG"/>
                     </connections>

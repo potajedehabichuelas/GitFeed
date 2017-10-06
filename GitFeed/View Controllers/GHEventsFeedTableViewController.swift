@@ -91,6 +91,8 @@ class GHEventsFeedTableViewController: UITableViewController, EventCellDelegate,
                 
                 if self.selectedEvent?.commitComment == nil {
                     RMessage.showNotification(withTitle: R.string.localizable.noInformationAvailable(), subtitle: "", type: .error, customTypeName: "", callback: nil)
+                } else {
+                    self.performSegue(withIdentifier: R.segue.ghEventsFeedTableViewController.eventDetailsSegue.identifier, sender: self)
                 }
             })
             .disposed(by: self.disposeBag)
@@ -166,8 +168,6 @@ class GHEventsFeedTableViewController: UITableViewController, EventCellDelegate,
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == R.segue.ghEventsFeedTableViewController.userProfileSegue.identifier && self.selectedUser != nil {
-            return true
-        } else if self.selectedEvent?.commitComment != nil {
             return true
         } else {
             return false

@@ -38,7 +38,7 @@ class GitFeedUITests: XCTestCase {
     }
     
     func testCheckUserProfile() {
-        //Not of much use unless we use a fixed JSON file for testing :/. As this is a real feed the usernames change constantly
+        //Not of much use (indeed it will always fail) unless we use a fixed JSON file for testing :/. As this is a real feed the usernames change constantly
         //Same scenario will occur to test commit comments
         let app = XCUIApplication()
         app.tables/*@START_MENU_TOKEN@*/.buttons["@viseth89"]/*[[".cells.buttons[\"@viseth89\"]",".buttons[\"@viseth89\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()

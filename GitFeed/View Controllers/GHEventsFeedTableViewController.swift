@@ -61,7 +61,7 @@ class GHEventsFeedTableViewController: UITableViewController, EventCellDelegate,
     func configureSearchController() {
 
         self.searchController.dimsBackgroundDuringPresentation = false
-        self.searchController.searchBar.placeholder = "filter Events"
+        self.searchController.searchBar.placeholder = R.string.localizable.filterEvents()
         self.searchController.hidesNavigationBarDuringPresentation = false
         self.tableView.tableHeaderView = searchController.searchBar
         

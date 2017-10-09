@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol EventCellDelegate {
+protocol EventCellDelegate: class {
     func showUserProfile(user: GHUser)
 }
 
@@ -23,7 +23,7 @@ class EventMainTableViewCell: UITableViewCell {
     @IBOutlet weak var detailsAvailable: UIImageView!
     var user: GHUser?
     
-    var delegate:EventCellDelegate?
+    weak var delegate:EventCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()

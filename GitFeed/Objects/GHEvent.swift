@@ -22,7 +22,7 @@ struct GHEventKeys {
     static let comment = "comment"
 }
 
-class GHEvent: NSObject {
+struct GHEvent {
     
     var type: String
     
@@ -38,7 +38,7 @@ class GHEvent: NSObject {
     
     var commitComment: GHCommitComment?
     
-    override init() {
+    init() {
         
         self.id = ""
         self.type = ""
@@ -49,7 +49,7 @@ class GHEvent: NSObject {
         self.org = GHUser()
     }
     
-    convenience init(eventDict: JSON) {
+    init(eventDict: JSON) {
         
         self.init()
         

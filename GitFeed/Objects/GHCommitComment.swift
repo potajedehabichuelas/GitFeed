@@ -16,14 +16,14 @@ struct GHCommitCommentKeys {
     static let commentBody = "body"
 }
 
-class GHCommitComment: NSObject {
+struct GHCommitComment {
 
     var user: GHUser
     var id: Int64
     var comment: String
     var createdAt: Date
     
-    override init() {
+    init() {
         
         self.user = GHUser()
         self.id = -1
@@ -31,7 +31,7 @@ class GHCommitComment: NSObject {
         self.createdAt = Date()
     }
     
-    convenience init(commitCommentDict: JSON) {
+    init(commitCommentDict: JSON) {
         
         self.init()
         

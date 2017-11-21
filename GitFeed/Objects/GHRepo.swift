@@ -15,20 +15,20 @@ struct GHERepoKeys {
     static let name = "name"
 }
 
-class GHRepo: NSObject {
+struct GHRepo {
 
     var id: Int64
     var name: String
     var url: String
     
-    override init() {
+    init() {
         
         self.id = -1
         self.name = ""
         self.url = ""
     }
     
-    convenience init(repoDict: JSON) {
+    init(repoDict: JSON) {
         
         self.init()
         if let rId = repoDict[GHERepoKeys.id].int64 {

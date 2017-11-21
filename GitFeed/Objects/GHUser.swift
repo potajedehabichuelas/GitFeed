@@ -17,14 +17,14 @@ struct GHUserKeys {
     static let avatarUrl = "avatar_url"
 }
 
-class GHUser: NSObject {
+struct GHUser {
 
     var id: Int64
     var login: String
     var avatarUrl: String
     var url: String
     
-    override init() {
+    init() {
         
         self.id = -1
         self.login = ""
@@ -32,7 +32,7 @@ class GHUser: NSObject {
         self.avatarUrl = ""
     }
     
-    convenience init(userDict: JSON) {
+    init(userDict: JSON) {
         
         self.init()
         
